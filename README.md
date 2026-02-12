@@ -3,28 +3,36 @@
 ## 📌 Project Overview
 This project implements a secure **User Authentication System** for a web application using **Node.js, Express, MongoDB, and JWT**. It supports user registration, login, password hashing, and protected routes using token-based authentication.
 
-The project was developed as **Task 2** of a Web Development Internship.
+The project was developed as ** Level 3 - Task 2** of a Web Development Internship.
 
 ---
 
-## 🛠️ Tech Stack
-- Node.js
-- Express.js
-- MongoDB (MongoDB Atlas)
-- Mongoose
-- JSON Web Tokens (JWT)
-- bcryptjs
-- dotenv
+🛠️ Tech Stack
+
+Backend: Node.js, Express.js
+
+Database: MongoDB Atlas
+
+Authentication: JWT (JSON Web Tokens)
+
+Security: bcrypt.js (password hashing)
+
+Deployment: Render
 
 ---
 
 ## ✨ Features
-- User Registration
-- User Login
-- Password Hashing using bcrypt
-- JWT-based Authentication
-- Protected Routes using Middleware
-- Secure handling of environment variables
+User Registration (hashed passwords)
+
+User Login with JWT token generation
+
+Protected routes using JWT authentication
+
+Secure middleware for authorization
+
+MongoDB database integration
+
+Environment variable based configuration
 
 ---
 
@@ -140,16 +148,75 @@ Protected routes secured using middleware
 
 All endpoints were tested locally using Postman / Thunder Client.
 
+📂 API Endpoints
+1️⃣ Register User
+
+POST
+
+/api/auth/register
+
+
+Body (JSON):
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+2️⃣ Login User
+
+POST
+
+/api/auth/login
+
+
+Body (JSON):
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+
+📌 Response includes a JWT token.
+
+3️⃣ Access Protected Route
+
+GET
+
+/api/auth/dashboard
+
+
+Headers:
+
+Authorization: Bearer <JWT_TOKEN>
+
+
+✅ Works with token
+❌ Returns 401 Unauthorized without token
+
+🔐 Authentication Flow
+
+Register a user
+
+Login to receive JWT token
+
+Pass token in Authorization header
+
+Access protected routes securely
+
 ✅ Task Status
 
 ✔ Task completed successfully
 ✔ All required objectives implemented
 ✔ Authentication flow verified
 
-📌 Note
+🌐 Deployment
 
-Deployment was not required as per task instructions. The system was implemented and tested in a local development environment.
+The backend is deployed on Render and connected to MongoDB Atlas using environment variables for secure configuration.
 
 👨‍💻 Author
 
 Kundan Atel
+Web Development Intern
